@@ -29,7 +29,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .partner-header { color: #666; font-size: 14px; font-weight: bold; margin-bottom: 10px; }
-        .partner-title { color: #ff0000; font-size: 24px; margin: 10px 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .partner-title { color: #ff0000; font-size: 24px; margin: 10px 0; border-bottom: 1px solid #333; padding-bottom: 10px; text-decoration: none; display: block; }
+        .partner-title a { color: #ff0000; text-decoration: none; }
         .partner-desc { color: #bbb; line-height: 1.6; font-style: italic; }
 
         /* 2. SUNUCU BİLGİ & AKTİFLİK BARI */
@@ -89,18 +90,24 @@
 <body>
 
     <div class="section-partner">
-        <div class="partner-header">** [K A R A N T I N A & @YENIDEN][discord.gg/karantina] **</div>
-        <h1 class="partner-title">⤹ KARANTINA & @YENIDEN Sunucusuna Katil!?</h1>
-        <p class="partner-desc">** <code>👑</code>﹕✶⋆.˚﹕K A R A N T I N A sunucumuz toplum icerisinde Kara Mizah sunucusu olarak geçen bir sunucudur adaletin adresidir**</p>
+        <div class="partner-header">** [K A R A N T I N A & @YENIDEN][<a href="https://discord.gg/karantina" style="color: #666; text-decoration: none;">discord.gg/karantina</a>] **</div>
+        
+        <h1 class="partner-title">
+            ⤹ <a href="https://discord.gg/karantina">KARANTINA & @YENIDEN</a> Sunucusuna Katil!?
+        </h1>
+
+        <p class="partner-desc">
+            ** <code>👑</code>﹕✶⋆.˚﹕K A R A N T I N A sunucumuz toplum icerisinde Kara Mizah sunucusu olarak geçen bir sunucudur adaletin adresidir**
+        </p>
     </div>
 
     <div class="section-stats">
         <div class="stat-box">
-            <span class="stat-label">Üyeler</span>
+            <span class="stat-label">Durum</span>
             <span id="st-status" class="stat-value online-dot">AKTİF</span>
         </div>
         <div class="stat-box">
-            <span class="stat-label">Çevrimiçin Üye</span>
+            <span class="stat-label">Çevrimiçi Üye</span>
             <span id="st-online" class="stat-value">0</span>
         </div>
         <div class="stat-box">
@@ -117,7 +124,7 @@
     <div class="mentions">[||@everyone||] • [||@here||]</div>
 
     <script>
-        // KANKA BURAYA KENDİ SUNUCU ID'Nİ YAZMALISIN
+        // Sunucu ID'si
         const DISCORD_SERVER_ID = "1403472039670583487"; 
 
         async function fetchDiscordData() {
@@ -125,10 +132,10 @@
                 const response = await fetch(`https://discord.com/api/guilds/${DISCORD_SERVER_ID}/widget.json`);
                 const data = await response.json();
 
-                // Çevrimiçi sayısını yazdır
+                // Çevrimiçi sayısını güncelle
                 document.getElementById('st-online').innerText = data.presence_count;
 
-                // Ses kanalındakileri say (Widget üyeleri destekliyorsa)
+                // Ses kanalındakileri say
                 if (data.members) {
                     const inVoice = data.members.filter(m => m.channel_id).length;
                     document.getElementById('st-voice').innerText = inVoice;
@@ -140,7 +147,7 @@
             }
         }
 
-        // Sayfa açıldığında ve her 30 saniyede bir güncelle
+        // İlk yükleme ve 30 saniyede bir otomatik yenileme
         fetchDiscordData();
         setInterval(fetchDiscordData, 30000);
     </script>
