@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOYGUN | EnİyiSite</title>
+    <title>SOYGUN | xd</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #313338; color: #dbdee1; margin: 0; }
-        .soygun-title { font-family: 'Orbitron', sans-serif; letter-spacing: -2px; text-transform: uppercase; }
-        .sidebar { background-color: #1e1f22; width: 72px; height: 100vh; position: fixed; left: 0; top: 0; border-right: 1px solid #2b2d31; }
-        .main-content { margin-left: 72px; padding: 40px; }
-        .discord-card { background-color: #2b2d31; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid transparent; transition: 0.2s; }
-        .discord-card:hover { background-color: #232428; border-left: 4px solid #f23f43; } /* Soygun Kırmızısı */
+        body { font-family: 'Inter', sans-serif; background-color: #09090b; color: #ececed; margin: 0; overflow-x: hidden; }
+        .soygun-logo { font-family: 'Montserrat', sans-serif; letter-spacing: 6px; text-transform: uppercase; }
+        .sidebar { background-color: #000000; width: 72px; height: 100vh; position: fixed; left: 0; top: 0; border-right: 1px solid #1a1a1c; z-index: 50; }
+        .main-content { margin-left: 72px; padding: 40px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .vip-card { background-color: #121214; border-radius: 12px; transition: 0.3s; border: 1px solid #1f1f22; }
+        .vip-card:hover { border-color: #f23f43; background-color: #18181b; transform: translateY(-3px); box-shadow: 0 10px 30px -10px rgba(242, 63, 67, 0.2); }
+        .glow-text { text-shadow: 0 0 30px rgba(242, 63, 67, 0.6); }
+        .command-badge { background-color: #f23f43; color: white; padding: 4px 10px; border-radius: 6px; font-family: monospace; font-weight: bold; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <div class="sidebar flex flex-col items-center py-4 space-y-4">
-        <div onclick="renderHome()" class="w-12 h-12 bg-[#f23f43] rounded-[16px] hover:rounded-[12px] transition-all cursor-pointer flex items-center justify-center font-black text-white text-xl shadow-lg shadow-red-900/20">S</div>
-        
-        <div onclick="renderBot()" class="w-12 h-12 bg-[#313338] hover:bg-[#5865f2] rounded-[24px] hover:rounded-[12px] transition-all cursor-pointer flex items-center justify-center text-white text-xl">🤖</div>
-        
-        <div onclick="renderHelp()" class="w-12 h-12 bg-[#313338] hover:bg-[#23a559] rounded-[24px] hover:rounded-[12px] transition-all cursor-pointer flex items-center justify-center text-white text-xl">❓</div>
+    <div class="sidebar flex flex-col items-center py-6 space-y-6">
+        <div onclick="renderHome()" title="Ana Sayfa" class="w-12 h-12 bg-[#f23f43] rounded-[15px] hover:rounded-[10px] transition-all cursor-pointer flex items-center justify-center font-black text-white text-xl shadow-[0_0_15px_rgba(242,63,67,0.5)]">S</div>
+        <div onclick="renderBot()" title="Bot Komutları" class="w-12 h-12 bg-[#121214] border border-[#1f1f22] hover:border-[#5865f2] rounded-[24px] hover:rounded-[12px] transition-all cursor-pointer flex items-center justify-center text-white text-xl hover:bg-[#1a1a1d]">🤖</div>
+        <div onclick="renderServer()" title="Sunucu Hakkında" class="w-12 h-12 bg-[#121214] border border-[#1f1f22] hover:border-[#f23f43] rounded-[24px] hover:rounded-[12px] transition-all cursor-pointer flex items-center justify-center text-white text-xl hover:bg-[#1a1a1d]">❓</div>
     </div>
 
-    <div id="app" class="main-content text-white">
+    <div id="app" class="main-content">
         </div>
 
     <script src="script.js"></script>
