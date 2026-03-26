@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B U L G A R | Panel</title>
+    <title>SOYGUN | Duyuru Paneli</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #313338; color: #dbdee1; }
-        .discord-card { background-color: #2b2d31; border-radius: 8px; transition: 0.2s; }
-        .discord-card:hover { background-color: #1e1f22; }
-        .sidebar { background-color: #1e1f22; width: 72px; height: 100vh; position: fixed; left: 0; top: 0; }
-        .main-content { margin-left: 72px; padding: 20px; }
-        .announcement-tag { background-color: #5865f2; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: bold; }
+        body { font-family: 'Inter', sans-serif; background-color: #1e1f22; color: #dbdee1; margin: 0; }
+        .soygun-title { font-family: 'Orbitron', sans-serif; letter-spacing: -2px; text-transform: uppercase; }
+        .sidebar { background-color: #111214; width: 72px; height: 100vh; position: fixed; left: 0; top: 0; border-right: 1px solid #2b2d31; }
+        .main-content { margin-left: 72px; padding: 40px; }
+        .discord-card { background-color: #2b2d31; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid transparent; transition: 0.2s; }
+        .discord-card:hover { background-color: #232428; border-left: 4px solid #f23f43; } /* Soygun kırmızısı */
     </style>
 </head>
 <body>
 
     <div class="sidebar flex flex-col items-center py-4 space-y-4">
-        <div onclick="renderHome()" class="w-12 h-12 bg-[#5865f2] rounded-[16px] hover:rounded-[12px] transition-all cursor-pointer flex items-center justify-center font-black text-white">B</div>
+        <div onclick="renderHome()" class="w-12 h-12 bg-[#f23f43] rounded-[16px] hover:rounded-[12px] transition-all cursor-pointer flex items-center justify-center font-black text-white text-xl shadow-lg shadow-red-900/20">S</div>
         <div onclick="renderAnnouncements()" class="w-12 h-12 bg-[#313338] hover:bg-[#23a559] rounded-[24px] hover:rounded-[12px] transition-all cursor-pointer flex items-center justify-center text-white text-xl">📢</div>
     </div>
 
-    <div id="app" class="main-content">
+    <div id="app" class="main-content text-white">
         </div>
 
     <script src="script.js"></script>
